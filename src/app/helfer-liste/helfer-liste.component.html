@@ -1,0 +1,8 @@
+<h1>Helfer-Liste</h1>
+
+<ul>
+    <li *ngFor="let Helfer of helfer">
+        <a [routerLink]="['/helfer', Helfer.id]">{{Helfer.name}} - {{Helfer.adress}} - {{Helfer.phonenumber}}</a>
+    </li>
+</ul>
+<router-outlet></router-outlet>
