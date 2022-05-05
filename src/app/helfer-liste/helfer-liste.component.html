@@ -1,7 +1,7 @@
 <h1>Helfer-Liste</h1>
 
 <ul>
-    <li *ngFor="let Helfer of helfer">
+    <li *ngFor="let Helfer of helfer | async">
         <a [routerLink]="['/helfer', Helfer.id]">{{Helfer.name}} - {{Helfer.adress}} - {{Helfer.phonenumber}}</a>
     </li>
 </ul>
