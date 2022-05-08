@@ -1,1 +1,30 @@
 <p>edit-helfer works!</p>
+<h1>Helfer-bearbeiten</h1>
+
+<!-- <ul> -->
+<!-- <li *ngFor="let Helfer-bearbeiten of edit-helfer| async"> -->
+<!-- <a [routerLink]="['/edit-helfer', Helfer.id]">{{Helfer.name}} - {{Helfer.adress}} - {{Helfer.phonenumber}}</a> -->
+<!-- </li> -->
+<!-- </ul> -->
+<form [formGroup]="helferForm" (ngSubmit)="onSubmit()" class="demo-ui-form">
+    <mat-form-field class="demo-ui-full-width">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput formControlName="name" placeholder="Name des Helfers">
+        <mat-error *ngIf="helferForm.controls['name'].touched && helferForm.controls['name'].hasError('required')">
+            Der Name ist ein Pflichtfeld.
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="demo-ui-full-width">
+        <mat-label>Telefonnummer</mat-label>
+        <input type="text" matInput formControlName="phonenumber" placeholder="Telefonnummer des Helfers">
+    </mat-form-field>
+
+    <mat-form-field class="demo-ui-full-width">
+        <mat-label>Adresse</mat-label>
+        <input type="number" matInput formControlName="adress" placeholder="Adresse des Helfers" step="0.01">
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" [disabled]="!helferForm.valid">Speichern</button>
+</form>
+<router-outlet></router-outlet>

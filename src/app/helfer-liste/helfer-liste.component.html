@@ -5,4 +5,13 @@
         <a [routerLink]="['/helfer', Helfer.id]">{{Helfer.name}} - {{Helfer.adress}} - {{Helfer.phonenumber}}</a>
     </li>
 </ul>
-<router-outlet></router-outlet>
+<div class="helfer-list-body">
+    <mat-nav-list>
+        <a mat-list-item [routerLink]="['/helfer', Helfer.id]" *ngFor="let Helfer of helfer | async">
+            <h4 mat-line>{{Helfer.name}}</h4>
+            <p mat-line> {{Helfer.phonenumber}} </p>
+        </a>
+    </mat-nav-list>
+
+    <router-outlet></router-outlet>
+</div>

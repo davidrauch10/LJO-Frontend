@@ -26,7 +26,7 @@ export class HelferListeComponent implements OnInit {
   public helfer: Observable<Helfer[]>;
 
   public constructor(private helferService: HelferService) {
-    this.helfer = helferService.getProducts();
+    this.helfer = helferService.getHelferliste();
   }
 
   ngOnInit(): void {

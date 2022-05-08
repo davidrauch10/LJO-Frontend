@@ -1,0 +1,11 @@
+.helfer-list-body {
+    display: flex;
+    flex-direction: row;
+}
+
+:host {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
